@@ -41,17 +41,27 @@ When evaluating the model and it's use cases, an accuracy of at least 99% to red
 
 # Feature Engineering
 
+Sentiment Analysis was conducted on psot self-text and titles. From these, I found that there were only notable
+differences between the compound scores of self-text in the two respective subreddits. So, I will included the compund score
+in the classification analysis.
 
+I decided to use two sets of TfidfVectorizers, one with single word vectors and the other with 2 to 5 word vectors.
+
+- Each only used words that were not commonly found in 20% and 30% of the dataset. 
+- The top 100 and 200 vectors were used from self and title text. 
+
+
+These two transformers were used in pipelines for the modeling step
 
 # Modeling
 
 The types of models used to classify text to subreddits were:
 
-    - Logistic Regression
-    - Random Forest Classifier
-    - AdaBoost Classifier
-    - Bagging Classifier
-    - Stacking Classifier
+   - Logistic Regression
+   - Random Forest Classifier
+   - AdaBoost Classifier
+   - Bagging Classifier
+   - Stacking Classifier
 
 # Conclusion
 
